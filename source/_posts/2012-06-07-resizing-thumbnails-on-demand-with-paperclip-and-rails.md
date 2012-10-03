@@ -7,8 +7,6 @@ comments: true
 categories: [ruby, rails, paperclip]
 ---
 
-## Resizing thumbnails on demand with Paperclip and Rails
-
 _{{ page.description }}_
 
 If you have a Rails app that supports image uploads, then you probably use [Paperclip](https://github.com/thoughtbot/paperclip).

@@ -7,8 +7,6 @@ comments: true
 categories: [ruby, redis]
 ---
 
-## Simple Redis caching in Ruby
-
 _{{ page.description }}_
 
 [Redis](http://redis.io/) is a simple and very fast key-value store, which can be used for all kinds of
