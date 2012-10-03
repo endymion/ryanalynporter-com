@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://www.ryanalynporter.com
+title: Ryan Alyn Porter
+subtitle: Web and mobile software developer
+author: Ryan Porter
 simple_search: http://google.com/search
 description:
 
@@ -58,13 +58,13 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 # ----------------------- #
 
 # Github repositories
-github_user:
-github_repo_count: 0
+github_user: endymion
+github_repo_count: 10
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: ryanalynporter
 twitter_tweet_count: 4
 twitter_show_replies: false
 twitter_follow_button: true
@@ -93,7 +93,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-29877480-1
 
 # Facebook Like
-facebook_like: false
+facebook_like: true
