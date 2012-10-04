@@ -172,7 +172,7 @@ end
 
 ### Example usage
 
-Here's an example of using the new ```Redis#cache``` method to cache the results of a call to the Twitter API, with a five-sectond timeout.  This example will return a default value of ```nil``` if the Twitter API times out.  But you could also pass a ```:default => { 'something?' }``` parameter in other scenarios.
+Here's an example of using the new ```Redis#cache``` method in a Rails app to cache the results of a call to the Twitter API, with a five-sectond timeout.  This example will return a default value of ```nil``` if the Twitter API times out.  But you could also pass a ```:default => { 'something?' }``` parameter in other scenarios.
 
 {% codeblock lang:ruby %}
 require 'redis'
