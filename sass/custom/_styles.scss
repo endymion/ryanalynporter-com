@@ -1,2 +1,17 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+.about-me {
+  margin-top: 2em;
+}
+
+code {
+  font-size: 120%;
+}
+
+.highlight, html .gist .gist-file .gist-syntax .gist-highlight {
+  .line-numbers {
+    font-size: 120%;
+    line-height: 22px;
+  }
+}
