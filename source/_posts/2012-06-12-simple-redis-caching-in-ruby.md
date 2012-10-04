@@ -15,7 +15,7 @@ processing background jobs or even [scheduled jobs](https://github.com/bvandenbo
 Redis can be used for all kinds of different things, and so it has a very generalized API that doesn't
 make any assumptions about how you're going to use it. The Redis API includes simple methods like
 ```get``` and ```set``` and ```expire```. And the [Ruby gem for Redis](https://github.com/redis/redis-rb)
-is a thin layer over the standard redis API.
+is a thin layer over the standard Redis API.
 
 ### Caching expensive operations with Redis
 
@@ -45,8 +45,7 @@ really need is a ```Redis#cache``` method.
 ### Monkey patching to the rescue
 
 With Ruby, you can monkey patch anything, so it's not difficult to add a new convenience method to
-the Ruby bindings for Redis.  We can just open the Redis class and drop in a new method.  Store
-this file in ```lib/redis_cache.rb``` in a Ruby project:
+the Ruby bindings for Redis.  We can just open the Redis class and drop in a new method.  You can simply add a file called ```lib/redis_cache.rb``` to a Ruby project in order to add a ```cache``` method ot the Redis API:
 
 {% codeblock lib/redis_cache.rb lang:ruby %}
 class Redis
@@ -78,7 +77,7 @@ wants to calculate, with caching wrapped unobtrusively around the meat of the so
 
 For example, from the simple unit tests for the ```Redis#cache``` method:
 
-{% codeblock lang:ruby %}
+{% codeblock test/unit/redis_cache_test.rb lang:ruby %}
 require File.dirname(__FILE__) + '/../test_helper'
 require 'redis'
 require 'redis_cache'
@@ -88,7 +87,8 @@ class RedisCacheTest < Test::Unit::TestCase
   def test_cache_block_in_redis
     redis = Redis.new
     assert 42, redis.cache('key') { 42 }
-    assert 42, redis.cache('key') { assert false, 'This should never be executed' }
+    assert 42, redis.cache('key') { assert false,
+      'This should never be executed' }
   end
 
   def test_cache_method_passes_redis_argument_to_block
@@ -107,7 +107,7 @@ method at the key "key" with ```redis.cache('key') { do_something }```.  Simple.
 You might want to disable caching in development and test modes.  You can add support for disabling
 caching by adding a second optional argument to the ```Redis#cache``` method:
 
-{% codeblock lang:ruby %}
+{% codeblock lib/redis_cache.rb lang:ruby %}
 class Redis
   
   def cache(key, expire=nil, recalculate=false)
@@ -132,4 +132,67 @@ value = redis.cache('key', 60,
   ['test', 'development'].include? Rails.env) do  
   "This will always happen."
 end
+{% endcodeblock %}
+
+### Add timeout and default parameters
+
+Generally when you use this kind of caching, you're using it to cache the results of some operation that's really slow.  If that operation is really slow because it involves the network, then maybe sometimes it might time out, and you might want to specify a default value to use instead when it times out.  It's easy to add support for a timeout using Ruby's [Timeout class](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/timeout/rdoc/Timeout.html), which is supported all the way back to Ruby 1.8.6.
+
+At this point, it's definitely time to switch to named parameters, so that the code that calls this method will be more clear and readable.
+
+{% codeblock lib/redis_cache.rb lang:ruby %}
+class Redis
+  
+  def cache(params)
+    key = params[:key] || raise(":key parameter is required!")
+    expire = params[:expire] || nil
+    recalculate = params[:recalculate] || nil
+    expire = params[:expire] || nil
+    timeout = params[:timeout] || 0
+    default = params[:default] || nil
+
+    if (value = get(key)).nil? || recalculate
+
+      begin
+        value = Timeout::timeout(timeout) { yield(self) }
+      rescue Timeout::Error
+        value = default
+      end
+
+      set(key, value)
+      expire(key, expire) if expire
+      value
+    else
+      value
+    end
+  end
+  
+end
+{% endcodeblock %}
+
+### Example usage
+
+Here's an example of using the new ```Redis#cache``` method to cache the results of a call to the Twitter API, with a five-sectond timeout.  This example will return a default value of ```nil``` if the Twitter API times out.  But you could also pass a ```:default => { 'something?' }``` parameter in other scenarios.
+
+{% codeblock lang:ruby %}
+require 'redis'
+require 'twitter'
+require 'json'
+
+redis = Redis.new
+
+twitter_user = 'ryanalynporter'
+
+tweet = redis.cache(
+    :key => "twitter-user-timeline-#{twitter_user}",
+    :expire => 300, # seconds, 5 minutes
+    :timeout => 5,  # seconds
+    # Recalculate every time when this is true.
+    :recalculate => ['test', 'development'].include?(Rails.env)
+  ) do
+    Twitter.user_timeline(twitter_user, :count => 1).first.to_json
+  end
+
+unless tweet.nil?
+  tweet = JSON.parse(tweet)
 {% endcodeblock %}
