@@ -4,7 +4,7 @@ layout: post
 description: How to generate Paperclip attachment thumbnails on demand instead of in advance.
 date: 2012-06-07
 comments: true
-categories: [ruby, rails, paperclip]
+categories: [Ruby, Rails, Paperclip]
 ---
 
 _{{ page.description }}_

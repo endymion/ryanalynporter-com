@@ -4,7 +4,7 @@ layout: post
 description: A utility method for caching the result of any block of Ruby code.
 date: 2012-06-12
 comments: true
-categories: [ruby, redis]
+categories: [Ruby, Redis]
 ---
 
 _{{ page.description }}_
