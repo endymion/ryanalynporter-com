@@ -15,3 +15,23 @@ code {
     line-height: 22px;
   }
 }
+
+#blog-archives {
+  @media only screen and (min-width: 550px) {
+    h2 {
+      display: block;
+      margin-bottom: .3em;
+      font-weight: normal;
+      font-size: 14px;
+      font-style: italic;
+      padding-top: 0.70em;
+      position: relative; top: -1px;
+      float: none;
+      &:first-child { padding-top: .75em; }
+    }
+  }
+}
+
+article img {
+  border: none;
+}
