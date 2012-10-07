@@ -11,7 +11,7 @@ _{{ page.description }}_
 
 {% img /images/posts/link-checker/terminal-screen-shot.png %}
 
-When I started using [Octopress](http://octopress.org) to build web sites, I was a little surprised to find that there aren't a lot of tools for checking links.  I want to check the links in new pages before I publish them, and I want to be able to check the links on the entire site so that I can fix dead links as time goes on.
+When I started using [Octopress](http://octopress.org) to build web sites, I was a little surprised to find that there aren't a lot of pure Ruby tools for checking links.  I want to check the links in new pages before I publish them, and I want to be able to check the links on the entire site so that I can fix dead links as time goes on.  And I want to do it with Ruby on my machine, not against a live server with a Mac app or a Windows app or something.  That's just the Octopress way.
 
 It didn't take long to make a Ruby script to find the HTML files in the 'public' folder of my Octopress site, find the links in each file using [Nokogiri](http://nokogiri.org), and check each link.  I set it up to display passing results in green, errors from bad links in red, and warnings about redirects in yellow.  I set it up to spawn a thread for each file and check them simultaneously, instead of (slowly) checking each HTML file in sequence.  That's pretty much all that I needed for my Octopress sites.
 
