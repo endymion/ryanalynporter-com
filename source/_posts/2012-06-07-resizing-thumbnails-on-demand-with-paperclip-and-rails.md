@@ -21,8 +21,7 @@ resize the images just-in-time (JIT) at any size specified by a user-editable vi
 ### Resizing thumbnails just in time
 
 Fortunately, Paperclip is flexible enough to handle that kind of scenario. This article demonstrates
-how to set up dynamic, just-in-time image resizing for Paperclip attachments in this [example Rails 3.2.5
-app](https://github.com/endymion/paperclip-just-in-time-resizing).
+how to set up dynamic, just-in-time image resizing for Paperclip attachments in this [example Rails 3.2.5 app](https://github.com/endymion/paperclip-just-in-time-resizing).
 
 First, we start with a basic [generated Rails 3.2.5 app](https://github.com/endymion/paperclip-just-in-time-resizing/commit/0a0b2babfbfdb6fc1ea4e1201b6fe334169a9b5a).  Then we add a [scaffold for an Image model](https://github.com/endymion/paperclip-just-in-time-resizing/commit/f408d1ccf83b70200e8f262fa95d6c7bef8e4cfc).  Then we [add a Paperclip attachment](https://github.com/endymion/paperclip-just-in-time-resizing/commit/358648128b63ecb4d17649c479b46130d5d336f1) called "attachment" to the Image model, with support for uploading an image and displaying the uploaded image.
 
