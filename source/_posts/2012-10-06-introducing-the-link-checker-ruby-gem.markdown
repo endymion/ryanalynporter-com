@@ -75,7 +75,7 @@ By default, the link checker will spawn a new thread for each HTML file so that 
 
 This whole point of me creating this thing originally was to scan my Octopress sites for bad links.  The finishing touch for that would be a ```check_links``` Rake task.  It's easy to add that to any Octopress site.  Just add this to your ```Rakefile```:
 
-{% codeblock "Gemfile" lang:ruby %}
+{% codeblock "Rakefile" lang:ruby %}
 desc "Check all external links"
 task :check_links do
   require 'link_checker'
@@ -85,7 +85,7 @@ end
 
 To adust parameters, pass in an ```:options``` hash:
 
-{% codeblock "Gemfile" lang:ruby %}
+{% codeblock "Rakefile" lang:ruby %}
 desc "Check all external links"
 task :check_links do
   require 'link_checker'
