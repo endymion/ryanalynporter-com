@@ -29,7 +29,7 @@ GEM
       liquid (~> 2.3)
       maruku (~> 0.5)
     kramdown (0.14.0)
-    link-checker (0.5.1)
+    link-checker (0.6.0)
       anemone (~> 0.7.2)
       colorize (~> 0.5.8)
       nokogiri (~> 1.5.5)
