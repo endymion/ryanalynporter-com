@@ -391,3 +391,12 @@ task :list do
   puts "Tasks: #{(Rake::Task.tasks - [Rake::Task[:list]]).join(', ')}"
   puts "(type rake -T for more detail)\n\n"
 end
+
+desc "Check all external links"
+task :check_links do
+  require 'link_checker'
+  LinkChecker.new(
+    :target => 'public',
+    :options => { :no_warnings => true }
+  ).check_uris
+end
