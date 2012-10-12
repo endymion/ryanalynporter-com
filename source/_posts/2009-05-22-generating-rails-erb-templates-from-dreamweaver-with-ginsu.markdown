@@ -3,7 +3,7 @@ layout: post
 title: "Generating Rails ERB Templates From Dreamweaver With Ginsu"
 date: 2009-05-22
 comments: true
-categories: [Ruby, Rails, ERB, Dreamweaver]
+categories: [Ruby, Rails, ERB, Dreamweaver, hpricot]
 ---
 
 Ginsu
@@ -14,10 +14,7 @@ graphic designers create web designs using tools like Dreamweaver and
 then pass them off to software developers for implementation as web
 applications
 
-But Rails has a different model for a web site than a tool like BBEdit.
-Rails thinks in terms of routes that lead to actions that render from
-templates that can use layouts, but Rapidweaver thinks in terms of
-pages. Every page includes the whole layout.
+But Rails has a different model for a web site than a graphic designer's authoring tool like BBEdit. Rails thinks in terms of routes that lead to actions that render using templates that can use layouts, but web authoring tools like Dreamweaver and Rapidweaver think in terms of pages. Every page includes the whole layout.
 
 Ginsu manages the transition of a web project, from a static web site to
 the final implementation as a Rails application. Ginsu creates hybrid
