@@ -53,13 +53,11 @@ The Solution
     mkdir static
 
 Copy your static web site from your graphic designer into your Rails
-application’s new “static” directory. If your static web site has a root
-index file called “index.html”, then your Rails app should have a file
-called “static/index.html”.
+application’s new ```static``` directory. If your static web site has a root index file called ```index.html```, then your Rails app should have a file called ```static/index.html```.
 
 Configure Ginsu to slice sections of pages from the static web site into
 partial templates in your Rails application by adding slicing
-instructions to your config/initializers/ginsu.rb:
+instructions to your ```config/initializers/ginsu.rb```:
 
     # Create a 'header' partial by plucking header HTML from static/index.html using a CSS selector.
     ginsu.partials << { :css => 'h3.r a.l', :static => 'index.html', :partial => 'header' }
