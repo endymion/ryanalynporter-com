@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Rapid Web Site Creation And Deployment With Appleseed"
+description: Create a Rails project, push it to GitHub, and deploy it to Heroku -- all with one command.
 date: 2010-08-27
 comments: true
 categories: [Ruby, Rails, Heroku, GitHub]

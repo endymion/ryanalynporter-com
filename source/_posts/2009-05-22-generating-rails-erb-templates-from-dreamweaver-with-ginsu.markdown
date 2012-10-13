@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Generating Rails ERB Templates From Dreamweaver With Ginsu"
+description: Bring graphic designers into your agile process by generating Rails templates automatially.
 date: 2009-05-22
 comments: true
 categories: [Ruby, Rails, ERB, Dreamweaver, hpricot]
