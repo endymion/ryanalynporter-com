@@ -12,6 +12,10 @@ Open Sesame was the solution that I came up with.  It generates an authorization
 
 I also needed a way to pass parameters from one site to another, and so I added an ```OpenSesame::Message``` class, for protecting the integrity of a string without encrypting it.
 
+# Update - October 13 2012
+
+When I originally built OpenSesame, I needed it for passing traffic between two Rails apps.  Tiesto.com, and VenueDriver.com.  Recently, I wanted to use it to pass authorized traffic between two Sinatra apps.  I discovered that I had built it to depend on Rails.  And also to depend on both sites being on computers that are in the UTC time zone.  I rebuilt OpenSesame to use Ruby, without Rails.  I packaged it as a Ruby gem and published it on RubyGems.org.  I also added Yardoc documentation, and I confirmed 100% RSpec test coverage using SimpleCov.
+
 # Mechanism
 
 Web Site A has an authenticated user that it wants to send to a protected feature on Web Site B.  It generates an authorization token that consists of a cryptographic hash of a timestamp plus a secret, plus the timestamp in plaintext.
