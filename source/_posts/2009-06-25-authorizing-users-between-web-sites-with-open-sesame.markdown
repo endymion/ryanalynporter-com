@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Authorizing Users Between Web Sites with Open Sesame"
-description: Use a cryptographic has to pass authenticated traffic between two web sites.
+description: Use a cryptographic hash to pass authenticated traffic between two web sites.
 date: 2009-06-25
 comments: true
 categories: [Ruby, Rails, Sinatra]
