@@ -23,6 +23,8 @@ the assistance of a developer. Then a developer can easily join the
 project to build out the back-end and assist the graphic designer with
 the front-end.
 
+<!-- more -->
+
 Here is an [example GitHub project](http://github.com/endymion/generated-by-appleseed) that Appleseed generated, and here is the [Heroku web application](http://generated-by-appleseed.heroku.com/) for that example project. Note the example layout, default home page, and Blueprint styling provided by Compass.
 
 # Usage

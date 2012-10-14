@@ -19,6 +19,8 @@ But this seems like something that other people might want to do, so I took the 
 
 And maybe you might want to check the links on a live web server, not static HTML files on your development machine.  So I added a web crawling feature using [Anemone](http://anemone.rubyforge.org) so that you can target the URL of a live site instead of a file path.  I want these features to be solid and reliable over time, so I built all of it with [RSpec](http://rspec.info) testing and confirmed 100% test coverage using [SimpleCov](https://github.com/colszowka/simplecov).  And you might not agree with my idea of sensible defaults, so I added a couple of command-line parameters for controlling warnings and errors.  The link-checker gem is pure Ruby and you can [get it from RubyGems](https://rubygems.org/gems/link-checker).  [The code](https://github.com/endymion/link-checker) is available on GitHub.
 
+<!-- more -->
+
 ### Installation
 
 To use the link-checker gem in a Ruby project, just add the gem to your Gemfile:

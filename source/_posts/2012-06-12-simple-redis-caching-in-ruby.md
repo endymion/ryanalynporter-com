@@ -9,19 +9,14 @@ categories: [Ruby, Redis]
 
 _{{ page.description }}_
 
-[Redis](http://redis.io/) is a simple and very fast key-value store, which can be used for all kinds of
-things. [Resque](https://github.com/defunkt/resque), for example, is a system built on Redis for
-processing background jobs or even [scheduled jobs](https://github.com/bvandenbos/resque-scheduler).
-Redis can be used for all kinds of different things, and so it has a very generalized API that doesn't
-make any assumptions about how you're going to use it. The Redis API includes simple methods like
-```get``` and ```set``` and ```expire```. And the [Ruby gem for Redis](https://github.com/redis/redis-rb)
+[Redis](http://redis.io/) is a simple and very fast key-value store, which can be used for all kinds of things. [Resque](https://github.com/defunkt/resque), for example, is a system built on Redis for
+processing background jobs or even [scheduled jobs](https://github.com/bvandenbos/resque-scheduler). Redis can be used for all kinds of different things, and so it has a very generalized API that doesn't
+make any assumptions about how you're going to use it. The Redis API includes simple methods like ```get``` and ```set``` and ```expire```. And the [Ruby gem for Redis](https://github.com/redis/redis-rb)
 is a thin layer over the standard Redis API.
 
 ### Caching expensive operations with Redis
 
-But when most people use Redis, they tend to use it for caching values in a web application, like you
-would use [memcached](http://memcached.org/). And if you use Redis for caching, then you might find
-yourself writing the same sort of code structure over and over:
+But when most people use Redis, they tend to use it for caching values in a web application, like you would use [memcached](http://memcached.org/). And if you use Redis for caching, then you might find yourself writing the same sort of code structure over and over:
 
 {% codeblock lang:ruby %}
 if (something = redis.get(redis_key = "the cache key")).nil?
@@ -38,9 +33,9 @@ end
 use(something)
 {% endcodeblock %}
 
-It's great that ```Redis#get``` and ```Redis#set``` and ```Redis#expire``` are all so simple.
-But if you're going to wrap expensive operations in Redis caching frequently, then what you
-really need is a ```Redis#cache``` method.
+It's great that ```Redis#get``` and ```Redis#set``` and ```Redis#expire``` are all so simple. But if you're going to wrap expensive operations in Redis caching frequently, then what you really need is a ```Redis#cache``` method.
+
+<!-- more -->
 
 ### Monkey patching to the rescue
 
