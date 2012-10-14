@@ -16,7 +16,7 @@ applications
 
 But Rails has a different model for a web site than a graphic designer's authoring tool like BBEdit. Rails thinks in terms of routes that lead to actions that render using templates that can use layouts, but web authoring tools like Dreamweaver and Rapidweaver think in terms of pages. Every page includes the whole layout.
 
-Ginsu plugs your graphic designers into the agile software development process, by automating the creation of ERB templates from HTML files.. Ginsu creates hybrid web sites with some sections served as static content and some sections powered by dynamic Rails actions.
+Ginsu plugs your graphic designers into the agile software development process, by automating the creation of ERB templates and Rails layout files from HTML files. Ginsu can create hybrid web sites with some sections served as static content and some sections powered by dynamic Rails actions, or you can convert every page into an action, and every Dreamweaver layout into a Rails layout.  It's not specific to Dreamweaver because it slices out content based on HTML CSS selectors, so you can use it with any HTML authoring tool.
 
 <!-- more -->
 
