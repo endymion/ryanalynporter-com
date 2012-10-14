@@ -11,7 +11,7 @@ _{{ page.description }}_
 
 When I was building the Tiesto.com web site and Tiesto's fan club web site, InTheBooth.com, I needed a way to send authorized traffic from the members-only InTheBooth.com web site to ticket sale pages at Venue Driver (ticketdriver.com) to members-only pre-sale ticket-sale pages that the general public could not access.  But I needed the Tiesto.com web site to be completely independent from the VenueDriver.com web site.  I needed some way to authorize users on the VenueDriver.com web site from the InTheBooth.com web site, even though the two sites needed to run in different cloud environments, with different databases.
 
-Open Sesame was the solution that I came up with.  It generates an authorization token by packaging a time stamp with a cryptographic hash of that time stamp plus a secret phrase.  The receiving end can take the time stamp and the secret that it also knows about, and generate a cryptographic hash of its own.  The it can compare that hash to the hash included in the token.  If the two are the same, then the token is verified.
+[Open Sesame](https://github.com/endymion/open-sesame) was the solution that I came up with.  It generates an authorization token by packaging a time stamp with a cryptographic hash of that time stamp plus a secret phrase.  The receiving end can take the time stamp and the secret that it also knows about, and generate a cryptographic hash of its own.  The it can compare that hash to the hash included in the token.  If the two are the same, then the token is verified.
 
 I also needed a way to pass parameters from one site to another, and so I added an ```OpenSesame::Message``` class, for protecting the integrity of a string without encrypting it.
 
@@ -93,3 +93,7 @@ In the second app, you can verify both the token and any parameters:
       end
       session[:open_sesame_verified] = true
     end
+
+# The Ruby gem
+
+The gem is hosted at [RubyGems](https://rubygems.org/gems/open-sesame), and the documentation is hosted at [RubyDoc.info](http://rubydoc.info/gems/open-sesame).  The code, of course, is hosted on [GitHub](https://github.com/endymion/open-sesame).
