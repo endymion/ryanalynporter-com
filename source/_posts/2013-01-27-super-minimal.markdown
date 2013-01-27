@@ -9,7 +9,7 @@ categories: [javascript, jquery]
 
 _{{ page.description }}_
 
-<iframe width="640" height="79" src="/super-minimal-ads/banner.html?type=leaderboard"></iframe>
+<iframe width="640" height="79" style="overflow: hidden;" src="/super-minimal-ads/banner.html?type=leaderboard"></iframe>
 
 I still maintain a web forum that I set up over five years ago for the Miami nightlife community, but I can't afford to spend a lot of time dealing with it.  Recently, the PHP-based ad management package that I used (and never had time to update) was used as an attack vector, and so it had to be removed.  I needed a replacement but I just didn't have the time to deal with setting up a new ad package, and I don't really want to deal with any PHP software packages other than the forum software itself, phpBB 3.  I don't want the liability of needing to stay current with security updates for yet another piece of mission-critical software.
 
@@ -109,7 +109,7 @@ function getURLParameter(name){
 The last step is simply to include the ```banner.html``` file with a ```type``` parameter, in an iframe.  This is the code used to insert the banner at the top of this page:
 
 {% codeblock site.html lang:javascript %}
-<iframe width="640" height="79" src="/super-minimal-ads/banner.html?type=leaderboard"></iframe>
+<iframe width="640" height="79" style="overflow: hidden;" src="/super-minimal-ads/banner.html?type=leaderboard"></iframe>
 {% endcodeblock %}
 
 Don't like iframes?  Yeah, I don't either.  No problem, just add the script code directly to your site's page, and change the target in the ```$('body').append...``` to put the banner where you want it in your page.
