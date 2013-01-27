@@ -113,3 +113,7 @@ The last step is simply to include the ```banner.html``` file with a ```type``` 
 {% endcodeblock %}
 
 Don't like iframes?  Yeah, I don't either.  No problem, just add the script code directly to your site's page, and change the target in the ```$('body').append...``` to put the banner where you want it in your page.
+
+### Requires no server-side code
+
+The whole point of this system is to eliminate 100% of the server-side code for serving ads.  That eliminates any possible security risks associated with an ad management system.  And it also means that you can use it with PHP or Rails or .Net or Dart or any web framework of any kind.  Including no web framework, like this Octopress web site, which is hosted on Amazon S3, and doesn't use any server-side web framework at all.
