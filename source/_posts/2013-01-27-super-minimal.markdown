@@ -9,13 +9,14 @@ categories: [javascript, jquery]
 
 _{{ page.description }}_
 
-<iframe width="640" height="79" style="overflow: hidden;" src="/super-minimal-ads/banner.html?type=leaderboard"></iframe>
+<iframe width="640" height="79" style="overflow: hidden;"
+  src="/super-minimal-ads/banner.html?type=leaderboard"></iframe>
 
 I still maintain a web forum that I set up over five years ago for the [Miami nightlife community](http://forum.talknightlife.com), but I can't afford to spend a lot of time dealing with it.  Recently, the PHP-based ad management package that I used (and never had time to update) was used as an attack vector, and so it had to be removed.  I needed a replacement but I just didn't have the time to deal with setting up a new ad package, and I don't really want to deal with any PHP software packages other than the forum software itself, phpBB 3.  I don't want the liability of needing to stay current with security updates for yet another piece of mission-critical software.
 
 Then I realized: I don't care about tracking the impressions or clicks.  The site is fairly popular in its niche, and sometimes the ad space is worth money.  But in nightlife, generally advertisers only care about the length of the ad campaign (a week or two) and nothing else.  Nightlife advertisers are generally not sophisticated enough to even care about clicks or impression counts or ROI.
 
-So why not just do it all in Javascript?  All of the work could be done by the client's browser, and there would be no possibility of a security breach through an outdated ad management system.  And so the [Super Minimal Ads](https://github.com/endymion/super-minimal-ads) project was born.  About an hour later, I was done.
+So why not just do it all in Javascript?  All of the work could be done by the client's browser, and there would be no possibility of a security breach through an outdated ad management system.  And it would work with PHP or Rails or even a static HTML site.  And so the [Super Minimal Ads](https://github.com/endymion/super-minimal-ads) project was born.  About an hour later, I was done.
 
 <!-- more -->
 
@@ -71,10 +72,13 @@ body { margin: 0; }
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>
 
+// Fetch the banner setup file.
 var filename = getURLParameter("type")+".js";
 jQuery.getScript(filename, function(){
   var banner = randomBanner();
-  $('body').append("<a target=\"tnl_ad\" href=\""+banner["url"]+"\"><img src=\"banners/"+banner["img"]+"\"></a>");
+  // Add the banner to the page body.
+  $('body').append("<a target=\"tnl_ad\" href=\""+banner["url"]+"\">" +
+    "<img src=\"banners/"+banner["img"]+"\"></a>");
 })
   .fail(function(jqxhr, settings, exception) {
     console.log("Error parsing " + filename + ": " + exception.message);
