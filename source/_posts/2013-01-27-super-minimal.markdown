@@ -62,7 +62,7 @@ The last ad in the list has a weight of four, so it will appear four times as of
 
 The file ```banner.html``` does all of the work.  It's a bare-bones HTML5 page, with no content.  It writes its own content with Javascript.  It looks in the query string for a ```type``` parameter, and uses that parameter to fetch a banner setup file.  The ```banners``` array from the setup file gets added to the namespace, and then the ```randomBanner()``` function picks a random banner based on the weights specified in the setup file.
 
-{% codeblock leaderboard.js lang:javascript %}
+{% codeblock banner.html lang:javascript %}
 <!doctype html>
 <meta charset=utf-8>
 <title>ad banners</title>

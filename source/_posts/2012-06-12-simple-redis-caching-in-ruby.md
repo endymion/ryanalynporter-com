@@ -9,7 +9,7 @@ categories: [Ruby, Redis]
 
 _{{ page.description }}_
 
-[Redis](http://redis.io/) is a simple and very fast key-value store, which can be used for all kinds of things. [Resque](https://github.com/defunkt/resque), for example, is a system built on Redis for
+[Redis](http://redis.io/) is a simple and very fast key-value store, that can be used for all kinds of things. [Resque](https://github.com/defunkt/resque), for example, is a system built on Redis for
 processing background jobs or even [scheduled jobs](https://github.com/bvandenbos/resque-scheduler). Redis can be used for all kinds of different things, and so it has a very generalized API that doesn't
 make any assumptions about how you're going to use it. The Redis API includes simple methods like ```get``` and ```set``` and ```expire```. And the [Ruby gem for Redis](https://github.com/redis/redis-rb)
 is a thin layer over the standard Redis API.
@@ -65,8 +65,8 @@ it returns that value immediately. If one doesn't exist, then it uses the code b
 Then it sets the Redis key to that value. Then it sets the expiration, in seconds, on that key, if there
 was an expiration argument provided.
 
-This simple code teaches Redis to speak the language of caching, which simplifies your high-level
-application code. Instead of the code pattern shown in the first code sample, which distracts the reader
+This simple code teaches Redis to speak the language of caching, simplifying your high-level
+application code. Instead of the code pattern shown in the first code sample, distracting the reader
 from the problem at hand with caching details, the application code can be all about the values that it
 wants to calculate, with caching wrapped unobtrusively around the meat of the solution code.
 
@@ -94,7 +94,7 @@ class RedisCacheTest < Test::Unit::TestCase
 end
 {% endcodeblock %}
 
-If you have a ```do_something``` method, which takes a long time to complete, then you can cache that
+If you have a ```do_something``` method that takes a long time to complete, then you can cache that
 method at the key "key" with ```redis.cache('key') { do_something }```.  Simple.
 
 ### Recalculate every time
