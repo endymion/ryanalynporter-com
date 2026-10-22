@@ -1,0 +1,8 @@
+{
+  "sources": [
+    { "key": "anthus", "name": "Anthus", "domain": "anth.us", "feed": "https://anth.us/atom.xml", "limit": 30 },
+    { "key": "threat", "name": "Threat Intelligence", "domain": "threat-intelligence.anth.us", "feed": "https://threat-intelligence.anth.us/atom.xml", "limit": 30 },
+    { "key": "shipped", "name": "Shipped", "domain": "shipped.anth.us", "feed": "https://shipped.anth.us/atom.xml", "limit": 10 },
+    { "key": "distinctive", "name": "Distinctive Mark", "domain": "distinctive-mark.com", "feed": "https://distinctive-mark.com/atom.xml", "limit": 30 }
+  ]
+}

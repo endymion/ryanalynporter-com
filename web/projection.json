@@ -1,0 +1,136 @@
+{
+  "theme": null,
+  "site": {
+    "name": "Ryan Alyn Porter",
+    "publisher": "Ryan Alyn Porter",
+    "author": "Ryan Alyn Porter",
+    "description": "Ryan Alyn Porter: CTO and applied-AI builder in Miami Beach. Systems that improve themselves, and the safeguards that keep them honest.",
+    "productionUrl": "https://www.ryanalynporter.com",
+    "componentsCss": false
+  },
+  "urls": {
+    "style": "directory",
+    "sections": {
+      "2009": {
+        "base": "2009",
+        "label": "2009",
+        "listingPage": false
+      },
+      "2010": {
+        "base": "2010",
+        "label": "2010",
+        "listingPage": false
+      },
+      "2012": {
+        "base": "2012",
+        "label": "2012",
+        "listingPage": false
+      },
+      "2013": {
+        "base": "2013",
+        "label": "2013",
+        "listingPage": false
+      },
+      "2014": {
+        "base": "2014",
+        "label": "2014",
+        "listingPage": false
+      },
+      "syndicated": {
+        "base": "syndicated",
+        "label": "Elsewhere",
+        "pages": false,
+        "listingPage": false,
+        "feed": false
+      }
+    }
+  },
+  "pages": [
+    {
+      "id": "home",
+      "path": "",
+      "title": "Ryan Alyn Porter",
+      "description": "CTO and applied-AI builder in Miami Beach. Systems that improve themselves, and the safeguards that keep them honest."
+    },
+    {
+      "id": "writing",
+      "path": "writing",
+      "title": "Writing",
+      "description": "Articles from this site and the Anthus publications, newest first."
+    },
+    {
+      "id": "building",
+      "path": "building",
+      "title": "Building",
+      "description": "Products, AI solutions and open-source platforms out of the lab."
+    },
+    {
+      "id": "background",
+      "path": "background",
+      "title": "Background",
+      "description": "Experience, education and expertise: thirty years of inventing, building and operating software."
+    }
+  ],
+  "fonts": {
+    "stylesheet": "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap"
+  },
+  "icons": {
+    "icon": "/favicon.png",
+    "iconType": "image/png",
+    "themeColor": "#F3F9F9"
+  },
+  "feeds": {
+    "formats": [
+      "rss",
+      "atom"
+    ],
+    "title": "Ryan Alyn Porter"
+  },
+  "listings": {
+    "tagTitle": "Tagged {tag}"
+  },
+  "redirects": {
+    "exact": {
+      "/archives/": "/writing/",
+      "/categories/anemone/": "/tags/anemone/",
+      "/categories/dreamweaver/": "/tags/dreamweaver/",
+      "/categories/ec2/": "/tags/ec2/",
+      "/categories/erb/": "/tags/erb/",
+      "/categories/github/": "/tags/github/",
+      "/categories/heroku/": "/tags/heroku/",
+      "/categories/hpricot/": "/tags/hpricot/",
+      "/categories/javascript/": "/tags/javascript/",
+      "/categories/jekyll/": "/tags/jekyll/",
+      "/categories/jquery/": "/tags/jquery/",
+      "/categories/nokogiri/": "/tags/nokogiri/",
+      "/categories/octopress/": "/tags/octopress/",
+      "/categories/paperclip/": "/tags/paperclip/",
+      "/categories/rails/": "/tags/rails/",
+      "/categories/redis/": "/tags/redis/",
+      "/categories/rspec/": "/tags/rspec/",
+      "/categories/ruby/": "/tags/ruby/",
+      "/categories/sinatra/": "/tags/sinatra/",
+      "/categories/vagrant/": "/tags/vagrant/"
+    }
+  },
+  "static": {
+    "copy": [
+      "public"
+    ]
+  },
+  "chrome": {
+    "body_class": "rap-site",
+    "scripts": [
+      "assets/site.js"
+    ],
+    "stylesheets": [
+      "css/markus-vendor.css",
+      "css/site-theme.css"
+    ],
+    "title_template": "{title} — {site}"
+  },
+  "hooks": "hooks.py",
+  "components": {
+    "breadcrumbs": false
+  }
+}

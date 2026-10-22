@@ -1,0 +1,1 @@
+papyrus-newsroom[markus]==5.27.0
