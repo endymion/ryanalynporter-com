@@ -118,7 +118,7 @@ def _from_search_index(source):
             "url": urljoin(source["site"], entry["url"]),
             "date": str(entry.get("date", ""))[:10],
             "description": entry.get("summary", ""),
-            "authors": [],
+            "authors": [str(name) for name in entry.get("authors") or []],
         }
 
 
