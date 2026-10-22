@@ -8,7 +8,7 @@ published to GitHub Pages by `.github/workflows/pages.yml` on every push to `mas
 | Path | What it is |
 |---|---|
 | `content/<yyyy>/<mm>/<dd>/<slug>.md` | Posts written for this site. The path is the URL: `/2012/06/12/simple-redis-caching-in-ruby/`, as it was under Octopress. |
-| `content/syndicated/` | Generated at build time by `scripts/syndicate.py` (not committed): link-only cards for articles on the Anthus publications listed in `scripts/syndication.json`. |
+| `content/syndicated/` | Generated at build time by `scripts/syndicate.py` (not committed): link-only cards for Ryan's articles on the publications listed in `scripts/syndication.json`. Only articles whose byline matches `authorPattern` are included, so a post needs a byline naming Ryan Porter to appear here. |
 | `web/projection.json` | Papyrus settings: sections, pages, feeds, legacy redirects. |
 | `web/hooks.py`, `web/site_data.py` | The look of every page, and the standing copy of the Building and Background pages. |
 | `web/css/site-theme.css`, `web/assets/site.js` | The theme and the Writing page's publication filter. |

@@ -16,7 +16,7 @@ import site_data as data
 
 NAVIGATION = (("Writing", "/writing/"), ("Building", "/building/"), ("Background", "/background/"))
 PERSONAL = {"key": "personal", "label": "This site", "domain": "ryanalynporter.com"}
-PUBLICATION_ORDER = ("anthus", "threat", "shipped", "distinctive", "personal")
+PUBLICATION_ORDER = ("anthus", "pilobolus", "threat", "shipped", "distinctive", "personal")
 FEED_CARD_COUNT = 6
 FEED_CARDS_PER_PUBLICATION = 2
 FEED_ROW_COUNT = 6
@@ -73,7 +73,8 @@ def _articles(page):
 
 
 def _balanced(entries, count, per_publication):
-    """The newest ``count`` entries, at most ``per_publication`` from any one publication, so no burst of posts takes over."""
+    """The newest ``count`` entries, at most ``per_publication`` from any one publication while others have entries to
+    show, so no burst of posts takes over; slots left over go to the newest of the rest."""
     chosen = []
     taken = {}
     for entry in entries:
@@ -81,7 +82,8 @@ def _balanced(entries, count, per_publication):
         if len(chosen) < count and taken.get(key, 0) < per_publication:
             chosen.append(entry)
             taken[key] = taken.get(key, 0) + 1
-    return chosen
+    chosen += [entry for entry in entries if entry not in chosen][: count - len(chosen)]
+    return sorted(chosen, key=lambda entry: entry.sort_key, reverse=True)
 
 
 def _link_attributes(entry):

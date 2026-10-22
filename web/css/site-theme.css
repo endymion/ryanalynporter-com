@@ -35,6 +35,7 @@
 .rap-pub--threat { --rap-pub-ink: #4B3F9E; --rap-pub-tint: #DCD8F7; }
 .rap-pub--shipped { --rap-pub-ink: #46620E; --rap-pub-tint: #E4F4B8; }
 .rap-pub--distinctive { --rap-pub-ink: #9A5B00; --rap-pub-tint: #FFE6A6; }
+.rap-pub--pilobolus { --rap-pub-ink: #9B2C5E; --rap-pub-tint: #F8D7E6; }
 .rap-pub--personal { --rap-pub-ink: #0B2B40; --rap-pub-tint: #CDEFE5; }
 
 * { box-sizing: border-box; }
